@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "Framework/BaseLevel.h"
 #include "Framework/Input.h"
+#include "BallManager.h"
+#include "FallingBallManager.h"
 #include <string>
 #include <iostream>
 
@@ -18,5 +20,7 @@ public:
 
 private:
 	// Default variables for level class.
-	
+	BallManager myManager{};
+	//FallingBallManager myManager{};
+	sf::Text noOfBallsText;
 };
