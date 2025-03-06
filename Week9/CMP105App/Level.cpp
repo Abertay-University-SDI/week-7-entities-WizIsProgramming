@@ -8,9 +8,11 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	// initialise game objects
 	//Seed random
 	srand(time(0));
-	myManager.setWindowPtr(window);
-	myManager.setTextPtr(&noOfBallsText);
+	//myManager.setWindowPtr(window);
+	//myManager.setTextPtr(&noOfBallsText);
 	//myManager.setSpawnPoint();
+	myPlayer.setWindow(window);
+	myPlayer.setInput(input);
 }
 
 Level::~Level()
@@ -25,24 +27,29 @@ void Level::handleInput(float dt)
 	{
 		window->close();
 	}
-	if (input->isPressed(sf::Keyboard::Space))
-	{
-		myManager.createBall();
-	}
+
+	//if (input->isPressed(sf::Keyboard::Space))
+	//{
+	//	myManager.createBall();
+	//}
+
+	myPlayer.handleInput();
 }
 
 // Update game objects
 void Level::update(float dt)
 {
-	myManager.update(dt);
-	myManager.spawn();
-	myManager.updateText();
+	myPlayer.update(dt);
+	//myManager.update(dt);
+	//myManager.spawn();
+	//myManager.updateText();
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-	myManager.render();
+	//myManager.render();
+	window->draw(myPlayer);
 	endDraw();
 }

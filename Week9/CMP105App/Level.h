@@ -5,6 +5,7 @@
 #include "Framework/Input.h"
 #include "BallManager.h"
 #include "FallingBallManager.h"
+#include "Player.h"
 #include <string>
 #include <iostream>
 
@@ -20,7 +21,8 @@ public:
 
 private:
 	// Default variables for level class.
-	BallManager myManager{};
+	//BallManager myManager{};
 	//FallingBallManager myManager{};
-	sf::Text noOfBallsText;
+	//sf::Text noOfBallsText;
+	Player myPlayer;
 };
